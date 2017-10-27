@@ -1,0 +1,1 @@
+double libb_func();
