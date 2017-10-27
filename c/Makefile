@@ -26,5 +26,8 @@ liba.a: liba.o
 libb.a: libb.o
 	ar -csr $@ $^
 
+libab.a: liba.a libb.a
+	echo 'CREATE $@\nADDLIB liba.a\nADDLIB libb.a\nSAVE\nEND' | ar -M
+
 clean:
 	rm -rf *.o *.a main
